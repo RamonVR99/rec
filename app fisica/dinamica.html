@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinámica - Física Interactiva</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.8;
+        }
+        header {
+            background-color: #492897;
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+        nav {
+            background: #333;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 1.2rem;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            padding: 2rem;
+        }
+        h1, h2, h3 {
+            color: #4CAF50;
+            text-align: center;
+        }
+        p, ul {
+            font-size: 1.2rem;
+            text-align: justify;
+        }
+        ul {
+            padding-left: 1.5rem;
+        }
+        .equation {
+            text-align: center;
+            font-size: 1.2rem;
+            font-style: italic;
+            margin: 1rem 0;
+            color: #333;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 1rem 0;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Dinámica</h1>
+        <p>La ciencia detrás de las fuerzas y el movimiento.</p>
+    </header>
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="cinematica.html">Cinemática</a>
+        <a href="energia-y-trabajo.html">Energía y Trabajo</a>
+        <a href="equilibrio-y-estatica.html">Equilibrio y Estática</a>
+    </nav>
+    <div class="container">
+        <h2>¿Qué es la dinámica?</h2>
+        <p>
+            La dinámica es la rama de la física que estudia las causas del movimiento, es decir, analiza las fuerzas que actúan sobre los cuerpos y cómo estas influyen en su estado de movimiento o reposo. A diferencia de la cinemática, que describe el movimiento sin considerar las fuerzas, la dinámica busca comprender por qué los objetos se mueven o permanecen estáticos.
+        </p>
+        <p>
+            Este estudio se basa principalmente en las <strong>tres leyes del movimiento de Newton</strong>, que constituyen los fundamentos de la mecánica clásica. Estas leyes explican cómo las fuerzas afectan la aceleración, la velocidad y la posición de los cuerpos.
+        </p>
+
+        <h2>Las leyes de Newton</h2>
+        <ul>
+            <li>
+                <strong>Primera ley o ley de la inercia:</strong> Un objeto permanecerá en reposo o en movimiento rectilíneo uniforme a menos que una fuerza externa actúe sobre él. Esta ley describe la tendencia natural de los objetos a resistir cambios en su estado de movimiento.
+            </li>
+            <li>
+                <strong>Segunda ley o ley fundamental de la dinámica:</strong> La fuerza neta aplicada a un objeto es directamente proporcional a su masa y a la aceleración que experimenta:
+                <div class="equation">F = m × a</div>
+                Donde:
+                <ul>
+                    <li><em>F</em>: Fuerza neta (Newton, N).</li>
+                    <li><em>m</em>: Masa del objeto (kilogramos, kg).</li>
+                    <li><em>a</em>: Aceleración del objeto (metros por segundo al cuadrado, m/s²).</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Tercera ley o principio de acción y reacción:</strong> Para cada fuerza que un objeto ejerce sobre otro, existe una fuerza igual en magnitud pero en dirección opuesta que el segundo objeto ejerce sobre el primero.
+            </li>
+        </ul>
+
+        <img src="" alt="Leyes de Newton aplicadas a una fuerza sobre un objeto">
+
+        <h2>Tipos de fuerzas</h2>
+        <p>
+            En dinámica, las fuerzas se clasifican en dos grandes categorías:
+        </p>
+        <ul>
+            <li><strong>Fuerzas de contacto:</strong> Aquellas que actúan cuando hay interacción directa entre dos objetos, como la fuerza normal, la fuerza de fricción y la tensión.</li>
+            <li><strong>Fuerzas a distancia:</strong> Actúan sin contacto directo, como la fuerza gravitacional, la fuerza eléctrica y la fuerza magnética.</li>
+        </ul>
+        <p>
+            La suma de todas las fuerzas que actúan sobre un cuerpo se conoce como <strong>fuerza neta</strong>. Si esta fuerza es distinta de cero, el cuerpo experimentará una aceleración.
+        </p>
+
+        <h2>Ejemplos de dinámica</h2>
+        <h3>Fuerza y aceleración</h3>
+        <p>
+            Supongamos que se aplica una fuerza de 50 N sobre un objeto de masa 10 kg. Usando la segunda ley de Newton, podemos calcular la aceleración:
+        </p>
+        <div class="equation">a = F / m = 50 N / 10 kg = 5 m/s²</div>
+        <p>
+            Esto significa que el objeto se acelerará a razón de 5 metros por segundo al cuadrado.
+        </p>
+
+        <h3>Fricción y movimiento</h3>
+        <p>
+            Un bloque de 5 kg se desliza sobre una superficie horizontal. Si el coeficiente de fricción entre el bloque y la superficie es 0.3, podemos calcular la fuerza de fricción que actúa sobre el bloque:
+        </p>
+        <div class="equation">F<sub>fricción</sub> = μ × F<sub>normal</sub></div>
+        <p>
+            Donde <em>F<sub>normal</sub></em> es igual al peso del bloque (<em>m × g</em>), y <em>μ</em> es el coeficiente de fricción:
+        </p>
+        <div class="equation">F<sub>fricción</sub> = 0.3 × (5 kg × 9.8 m/s²) = 14.7 N</div>
+        <p>
+            La fuerza de fricción opone el movimiento del bloque, reduciendo su velocidad.
+        </p>
+
+        <h3>Acción y reacción</h3>
+        <p>
+            Cuando un nadador empuja el agua hacia atrás con sus brazos, el agua ejerce una fuerza igual y opuesta hacia adelante, lo que permite al nadador moverse.
+        </p>
+        <img src="" alt="Ejemplo de acción y reacción en la natación">
+
+        <h2>Aplicaciones de la dinámica</h2>
+        <p>
+            La dinámica tiene aplicaciones en una amplia variedad de campos, como el diseño de vehículos, la ingeniería estructural, los deportes y la exploración espacial. Por ejemplo:
+        </p>
+        <ul>
+            <li>En la ingeniería automotriz, se utiliza para calcular las fuerzas necesarias para frenar o acelerar un vehículo.</li>
+            <li>En el diseño de edificios, se analizan las fuerzas que actúan sobre las estructuras para garantizar su estabilidad.</li>
+            <li>En la exploración espacial, la dinámica ayuda a planificar trayectorias y maniobras de cohetes y satélites.</li>
+        </ul>
+    </div>
+    <footer>
+        <p>&copy; 2024 Física Interactiva. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

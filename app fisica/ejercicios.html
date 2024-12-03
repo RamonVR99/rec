@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Exámenes Interactivos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background-color: #492897;
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+        nav {
+            background: #333;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            padding: 2rem;
+        }
+        .create-exam {
+            margin: 2rem 0;
+            padding: 1rem;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .create-exam textarea, .create-exam input {
+            width: 100%;
+            margin: 0.5rem 0;
+            padding: 0.5rem;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .create-exam button {
+            padding: 0.7rem 1.5rem;
+            font-size: 1rem;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .create-exam button:hover {
+            background-color: #3E8E41;
+        }
+        .exam-list {
+            margin-top: 2rem;
+            padding: 1rem;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .exam-item {
+            margin: 1rem 0;
+            padding: 1rem;
+            border-bottom: 1px solid #ddd;
+        }
+        .exam-item h4 {
+            margin: 0;
+        }
+        .exam-item input {
+            margin: 0.5rem 0;
+            padding: 0.5rem;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: calc(100% - 1rem);
+        }
+        .exam-item button {
+            margin-top: 0.5rem;
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .exam-item button:hover {
+            background-color: #3E8E41;
+        }
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mini Exámenes Interactivos</h1>
+        <p>Crea y responde preguntas con tus compañeros.</p>
+    </header>
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="recursos.html">Recursos</a>
+    </nav>
+    <div class="container">
+        <!-- Crear preguntas -->
+        <div class="create-exam">
+            <h2>Crea un Mini Examen</h2>
+            <textarea id="newQuestion" placeholder="Escribe tu pregunta aquí..."></textarea>
+            <input type="text" id="correctAnswer" placeholder="Escribe la respuesta correcta aquí...">
+            <button onclick="addExam()">Agregar Pregunta</button>
+        </div>
+
+        <!-- Lista de preguntas -->
+        <div class="exam-list">
+            <h3>Preguntas Creadas</h3>
+            <div id="examContainer">
+                <p>No hay preguntas todavía. ¡Sé el primero en agregar una!</p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Física Interactiva. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        const examContainer = document.getElementById("examContainer");
+
+        function addExam() {
+            const questionText = document.getElementById("newQuestion").value.trim();
+            const correctAnswer = document.getElementById("correctAnswer").value.trim();
+
+            if (questionText === "" || correctAnswer === "") {
+                alert("Por favor, completa tanto la pregunta como la respuesta correcta.");
+                return;
+            }
+
+            // Crear un nuevo elemento para la pregunta
+            const examItem = document.createElement("div");
+            examItem.classList.add("exam-item");
+
+            examItem.innerHTML = `
+                <h4>${questionText}</h4>
+                <input type="text" placeholder="Escribe tu respuesta aquí..." class="student-answer">
+                <button onclick="checkAnswer(this, '${correctAnswer}')">Responder</button>
+                <p class="feedback" style="margin-top: 0.5rem; font-weight: bold;"></p>
+            `;
+
+            // Agregar la pregunta a la lista
+            if (examContainer.children[0].tagName === "P") {
+                examContainer.innerHTML = ""; // Limpiar el mensaje de "No hay preguntas"
+            }
+            examContainer.appendChild(examItem);
+
+            // Limpiar los campos de entrada
+            document.getElementById("newQuestion").value = "";
+            document.getElementById("correctAnswer").value = "";
+        }
+
+        function checkAnswer(button, correctAnswer) {
+            const examItem = button.parentElement;
+            const studentAnswer = examItem.querySelector(".student-answer").value.trim();
+            const feedback = examItem.querySelector(".feedback");
+
+            if (studentAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
+                feedback.textContent = "¡Correcto!";
+                feedback.style.color = "green";
+            } else {
+                feedback.textContent = "Incorrecto. Intenta de nuevo.";
+                feedback.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>

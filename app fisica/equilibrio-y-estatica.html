@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equilibrio y Estática - Física Interactiva</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.8;
+        }
+        header {
+            background-color: #492897;
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+        nav {
+            background: #333;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 1.2rem;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            padding: 2rem;
+        }
+        h1, h2, h3 {
+            color: #4CAF50;
+            text-align: center;
+        }
+        p, ul {
+            font-size: 1.2rem;
+            text-align: justify;
+        }
+        ul {
+            padding-left: 1.5rem;
+        }
+        .equation {
+            text-align: center;
+            font-size: 1.2rem;
+            font-style: italic;
+            margin: 1rem 0;
+            color: #333;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 1rem 0;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Equilibrio y Estática</h1>
+        <p>Estudio del equilibrio de los cuerpos en reposo y en movimiento constante.</p>
+    </header>
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="cinematica.html">Cinemática</a>
+        <a href="dinamica.html">Dinámica</a>
+        <a href="energia-y-trabajo.html">Energía y Trabajo</a>
+    </nav>
+    <div class="container">
+        <h2>¿Qué es el equilibrio y la estática?</h2>
+        <p>
+            La estática es la rama de la mecánica que estudia el equilibrio de los cuerpos sometidos a fuerzas. El equilibrio ocurre cuando la fuerza neta y el momento neto sobre un objeto son cero, lo que significa que el objeto no acelera ni rota.
+        </p>
+        <p>
+            Este estado puede presentarse en objetos en reposo (equilibrio estático) o en movimiento rectilíneo uniforme (equilibrio dinámico).
+        </p>
+
+        <h2>Condiciones de equilibrio</h2>
+        <p>
+            Para que un cuerpo esté en equilibrio, deben cumplirse dos condiciones fundamentales:
+        </p>
+        <ul>
+            <li>
+                <strong>Primera condición:</strong> La suma de todas las fuerzas externas que actúan sobre el cuerpo debe ser igual a cero:
+                <div class="equation">∑F = 0</div>
+                Esto asegura que no haya movimiento lineal.
+            </li>
+            <li>
+                <strong>Segunda condición:</strong> La suma de todos los momentos de fuerza respecto a cualquier punto debe ser igual a cero:
+                <div class="equation">∑τ = 0</div>
+                Esto asegura que no haya rotación.
+            </li>
+        </ul>
+        <img src="" alt="Ejemplo de equilibrio estático en un puente colgante">
+
+        <h2>Momento de fuerza</h2>
+        <p>
+            El momento de fuerza (o torque) mide la capacidad de una fuerza para provocar rotación alrededor de un punto o eje. Se calcula como:
+        </p>
+        <div class="equation">τ = F × d × sin(θ)</div>
+        <ul>
+            <li><strong>τ:</strong> Momento de fuerza (Newton-metro, N·m).</li>
+            <li><strong>F:</strong> Fuerza aplicada (Newtons, N).</li>
+            <li><strong>d:</strong> Distancia perpendicular al punto de giro (metros, m).</li>
+            <li><strong>θ:</strong> Ángulo entre la fuerza y la distancia.</li>
+        </ul>
+        <p>
+            Por ejemplo, si se aplica una fuerza de 50 N a una distancia de 2 m desde un eje con un ángulo de 90°, el momento de fuerza es:
+        </p>
+        <div class="equation">τ = 50 N × 2 m × sin(90°) = 100 N·m</div>
+        <img src="" alt="Ejemplo de momento de fuerza aplicado a una puerta">
+
+        <h2>Ejemplos de equilibrio y estática</h2>
+        <h3>Ejemplo 1: Equilibrio en un puente</h3>
+        <p>
+            Un puente colgante soporta un vehículo de 2000 kg estacionado en su centro. Las fuerzas ejercidas por los cables deben equilibrar el peso del vehículo. El peso es:
+        </p>
+        <div class="equation">P = m × g = 2000 kg × 9.8 m/s² = 19,600 N</div>
+        <p>
+            Los cables ejercen fuerzas hacia arriba iguales a la mitad del peso cada uno, asegurando que ∑F = 0.
+        </p>
+
+        <h3>Ejemplo 2: Momento en una balanza</h3>
+        <p>
+            Una balanza de brazos iguales tiene un objeto de 5 kg a 2 m del eje. Para equilibrar, ¿qué masa debe colocarse en el otro brazo a 1 m del eje?
+        </p>
+        <p>Condición de equilibrio: ∑τ = 0</p>
+        <div class="equation">5 kg × 9.8 m/s² × 2 m = m × 9.8 m/s² × 1 m</div>
+        <div class="equation">m = 10 kg</div>
+        <p>
+            Se necesita un objeto de 10 kg en el otro brazo.
+        </p>
+        <img src="" alt="Ejemplo de equilibrio en una balanza">
+
+        <h2>Tipos de equilibrio</h2>
+        <ul>
+            <li><strong>Equilibrio estable:</strong> Ocurre cuando un objeto tiende a regresar a su posición original tras una perturbación.</li>
+            <li><strong>Equilibrio inestable:</strong> Ocurre cuando un objeto se aleja aún más de su posición original tras una perturbación.</li>
+            <li><strong>Equilibrio indiferente:</strong> Ocurre cuando un objeto permanece en equilibrio tras una perturbación.</li>
+        </ul>
+        <img src="" alt="Tipos de equilibrio">
+
+        <h2>Aplicaciones de la estática</h2>
+        <p>
+            La estática tiene muchas aplicaciones prácticas, entre las que se incluyen:
+        </p>
+        <ul>
+            <li><strong>Construcción:</strong> Diseño de estructuras como puentes, edificios y torres.</li>
+            <li><strong>Ingeniería mecánica:</strong> Análisis de sistemas en equilibrio como grúas y balanzas.</li>
+            <li><strong>Diseño industrial:</strong> Estabilidad de objetos como muebles y herramientas.</li>
+        </ul>
+        <img src="" alt="Aplicación de la estática en la construcción">
+    </div>
+    <footer>
+        <p>&copy; 2024 Física Interactiva. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinemática - Física Interactiva</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.8;
+        }
+        header {
+            background-color: #492897;
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+        nav {
+            background: #333;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 1.2rem;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            padding: 2rem;
+        }
+        h1, h2, h3 {
+            color: #4CAF50;
+            text-align: center;
+        }
+        p, ul {
+            font-size: 1.2rem;
+            text-align: justify;
+        }
+        ul {
+            padding-left: 1.5rem;
+        }
+        .equation {
+            text-align: center;
+            font-size: 1.2rem;
+            font-style: italic;
+            margin: 1rem 0;
+            color: #333;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 1rem 0;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Cinemática</h1>
+        <p>Explorando el movimiento: principios, tipos y ejemplos.</p>
+    </header>
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="dinamica.html">Dinámica</a>
+        <a href="energia-y-trabajo.html">Energía y Trabajo</a>
+        <a href="equilibrio-y-estatica.html">Equilibrio y Estática</a>
+    </nav>
+    <div class="container">
+        <h2>¿Qué es la cinemática?</h2>
+        <p>
+            La cinemática es la rama de la física clásica que se ocupa únicamente de la descripción del movimiento de los cuerpos, sin tomar en cuenta las interacciones que provocaron dicho movimiento.
+        </p>
+        <p>
+            El movimiento de un cuerpo puede descomponerse en dos tipos: <strong>traslación</strong> y <strong>rotación</strong>. Si el objeto es suficientemente pequeño, como un punto, el movimiento es únicamente traslacional, lo que da lugar al concepto de partícula en física.
+        </p>
+        <p>
+            En física, una partícula es un punto material, es decir, un punto con masa. Para simplificar el estudio del movimiento, se utiliza el concepto de <strong>centro de masa</strong>, que se comporta como si toda la masa del objeto estuviera concentrada en él.
+        </p>
+        <img src="" alt="Movimiento del balón de basket">
+        <p>
+            Por ejemplo, el movimiento traslacional de la Luna respecto de la Tierra se describe por el movimiento de su centro de masa. Similarmente, el movimiento de una pelota de básquet puede representarse mediante el movimiento de su centro de masa.
+        </p>
+
+        <h2>Principios de la cinemática</h2>
+        <p>
+            La cinemática traslacional estudia el movimiento de una partícula de masa <em>m</em>. Para describir dicho movimiento, se requiere un <strong>sistema de referencia</strong>, definido por un origen y tres ejes cartesianos perpendiculares.
+        </p>
+        <p>
+            Las principales magnitudes cinemáticas son:
+        </p>
+        <ul>
+            <li>
+                <strong>Posición:</strong> Es el vector que parte desde el origen del sistema de referencia hasta la ubicación de la partícula. Depende de las coordenadas espaciales y del tiempo.
+            </li>
+            <li>
+                <strong>Velocidad:</strong> Mide el cambio de posición por unidad de tiempo, describiendo lo rápido que se mueve un objeto.
+            </li>
+            <li>
+                <strong>Aceleración:</strong> Es el cambio de velocidad por unidad de tiempo. En mecánica clásica, la aceleración es proporcional a la fuerza neta sobre la partícula.
+            </li>
+        </ul>
+
+        <h2>Tipos de movimiento en cinemática</h2>
+        <ul>
+            <li><strong>Movimiento rectilíneo uniforme (MRU):</strong> Trayectoria en línea recta con aceleración nula.</li>
+            <li><strong>Movimiento rectilíneo uniformemente acelerado (MRUA):</strong> Línea recta con aceleración constante paralela a la velocidad.</li>
+            <li><strong>Movimiento rectilíneo uniformemente retardado (MRUR):</strong> Línea recta con aceleración contraria a la velocidad.</li>
+            <li><strong>Movimiento parabólico:</strong> Combina un movimiento horizontal uniforme y un movimiento vertical acelerado.</li>
+            <li><strong>Movimiento circular uniforme (MCU):</strong> Movimiento sobre una circunferencia con velocidad angular constante.</li>
+            <li><strong>Movimiento circular uniformemente acelerado (MCUA):</strong> Movimiento sobre una circunferencia con velocidad angular variable.</li>
+        </ul>
+        <img src="" alt="Ejemplo de movimiento rectilíneo uniforme">
+
+        <h2>Ejemplos de cinemática</h2>
+        <h3>Rapidez y velocidad</h3>
+        <p>
+            La rapidez mide el cambio de posición en función del tiempo:
+        </p>
+        <div class="equation">rapidez = distancia / tiempo</div>
+        <p>
+            Ejemplo: Un automóvil recorre 500 m en 10 s. Su rapidez es:
+        </p>
+        <div class="equation">500 m / 10 s = 50 m/s</div>
+        <img src="" alt="Cálculo de rapidez de un auto">
+
+        <h3>Velocidad instantánea y velocidad media</h3>
+        <p>
+            La velocidad media se calcula como:
+        </p>
+        <div class="equation">velocidad media = distancia total / tiempo total</div>
+        <p>
+            Sin embargo, no informa sobre las variaciones instantáneas de velocidad, como las que ocurren al frenar o acelerar un automóvil.
+        </p>
+
+        <h3>Aceleración</h3>
+        <p>
+            La aceleración mide el cambio de velocidad en el tiempo. Por ejemplo, en caída libre, los cuerpos sobre la superficie terrestre experimentan una aceleración constante de:
+        </p>
+        <div class="equation">g = 10 m/s<sup>2</sup></div>
+        <p>
+            Un objeto que cae durante 2 segundos adquiere una velocidad de 20 m/s y recorre una distancia de 20 metros.
+        </p>
+    </div>
+    <footer>
+        <p>&copy; 2024 Física Interactiva. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

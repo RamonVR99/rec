@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursos Interactivos - Física Interactiva</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js" integrity="sha512-B6tG3V6l3RY8PmfDm/UbrMOihFQrbGRwN7EuHFl8zVoaVDRvkgPAIKC/Qc6VVclWDvdbaCbQ6N6rkHvRH6KO6Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            display: flex;
+            flex-direction: column;
+        }
+        .simulation {
+            padding: 1rem;
+            text-align: center;
+        }
+        .problems, .questions {
+            background-color: #fff;
+            padding: 1.5rem;
+            border-top: 2px solid #ddd;
+            margin-top: 1rem;
+        }
+        .problems h3, .questions h3 {
+            text-align: center;
+            color: #4CAF50;
+        }
+        .problems label, .problems p, .questions label, .questions p {
+            font-size: 1.2rem;
+        }
+        .problems input, .questions input {
+            width: 100%;
+            margin: 0.5rem 0;
+            padding: 0.5rem;
+            font-size: 1rem;
+        }
+        .problems button, .questions button {
+            width: 100%;
+            padding: 0.8rem;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+        .problems button:hover, .questions button:hover {
+            background-color: #3e8e41;
+        }
+        .problems .output, .questions .feedback {
+            margin-top: 1rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-align: center;
+            color: #333;
+        }
+        .formula-section {
+            margin-top: 2rem;
+            padding: 1rem;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            text-align: center;
+        }
+        .formula-section h3 {
+            color: #4CAF50;
+        }
+        .formula-section .math {
+            display: block;
+            background-color: #f9f9f9;
+            padding: 1rem;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 1.2rem;
+            margin: 1rem auto;
+            text-align: center;
+            max-width: 80%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Simulation Section -->
+    <div class="simulation">
+        <h2>Simulación de Movimiento de Proyectiles</h2>
+        <iframe src="https://phet.colorado.edu/sims/html/projectile-motion/latest/projectile-motion_es.html" 
+                width="800" height="500"></iframe>
+    </div>
+    
+    <!-- Problem Solving Section -->
+    <div class="problems">
+        <h3>Calculadora de Movimiento de Proyectiles</h3>
+        <p>Introduce las condiciones iniciales para calcular:</p>
+        <label for="velocity">Velocidad inicial (\(v_0\)) [m/s]:</label>
+        <input type="number" id="velocity" placeholder="Ej. 10" step="0.1">
+        
+        <label for="angle">Ángulo (\(θ\)) [°]:</label>
+        <input type="number" id="angle" placeholder="Ej. 40" step="0.1">
+        
+        <label for="gravity">Gravedad (\(g\)) [m/s²]:</label>
+        <input type="number" id="gravity" placeholder="Ej. 9.8" step="0.1" value="9.8">
+        
+        <button onclick="calculateProjectile()">Calcular</button>
+        
+        <div class="output" id="output"></div>
+    </div>
+
+    <!-- Interactive Questions Section -->
+    <div class="questions">
+        <h3>Pregunta Basada en las Condiciones</h3>
+        <p>
+            Un proyectil se lanza con una velocidad inicial de \(10 \, \text{m/s}\), formando un ángulo de \(40^\circ\) con respecto a la horizontal. 
+            La gravedad en el sistema es de \(9.8 \, \text{m/s}^2\). 
+            <strong>Responde las siguientes preguntas:</strong>
+        </p>
+        <label for="studentYmax">¿Cuál es la altura máxima (\(y_{\text{max}}\))? [m]:</label>
+        <input type="number" id="studentYmax" placeholder="Ej. 1.30">
+        
+        <label for="studentXmax">¿Cuál es la distancia horizontal (\(x_{\text{max}}\))? [m]:</label>
+        <input type="number" id="studentXmax" placeholder="Ej. 9.90">
+        
+        <button onclick="checkAnswers()">Verificar Respuestas</button>
+        
+        <div class="feedback" id="feedback"></div>
+    </div>
+
+    <!-- Formula Section -->
+    <div class="formula-section">
+        <h3>Fórmulas Utilizadas</h3>
+        <p>Altura máxima (\(y_{\text{max}}\)):</p>
+        <div class="math">$$ y_{\text{max}} = \frac{v_0^2 \sin^2(\theta)}{2g} $$</div>
+        <p>Distancia horizontal (\(x_{\text{max}}\)):</p>
+        <div class="math">$$ x_{\text{max}} = \frac{v_0^2 \sin(2\theta)}{g} $$</div>
+    </div>
+
+    <script>
+        // Calculadora de movimiento de proyectiles
+        function calculateProjectile() {
+            const v0 = parseFloat(document.getElementById("velocity").value);
+            const angle = parseFloat(document.getElementById("angle").value);
+            const g = parseFloat(document.getElementById("gravity").value);
+
+            if (isNaN(v0) || isNaN(angle) || isNaN(g)) {
+                document.getElementById("output").innerText = "Por favor, introduce todos los valores correctamente.";
+                return;
+            }
+
+            const theta = angle * (Math.PI / 180);
+            const ymax = (v0 ** 2 * Math.sin(theta) ** 2) / (2 * g);
+            const xmax = (v0 ** 2 * Math.sin(2 * theta)) / g;
+
+            document.getElementById("output").innerHTML = `
+                <p>Altura máxima (\(y_{\text{max}}\)): ${ymax.toFixed(2)} m</p>
+                <p>Distancia horizontal (\(x_{\text{max}}\)): ${xmax.toFixed(2)} m</p>
+            `;
+
+            MathJax.typesetPromise();
+        }
+
+        // Respuestas correctas predefinidas
+        const correctYmax = 2.11; // Para v0 = 10 m/s y ángulo = 40°
+        const correctXmax = 10.1; // Para v0 = 10 m/s y ángulo = 40°
+
+        function checkAnswers() {
+            const studentYmax = parseFloat(document.getElementById("studentYmax").value);
+            const studentXmax = parseFloat(document.getElementById("studentXmax").value);
+            const feedback = document.getElementById("feedback");
+
+            if (isNaN(studentYmax) || isNaN(studentXmax)) {
+                feedback.innerText = "Por favor, introduce respuestas para ambas preguntas.";
+                feedback.style.color = "red";
+                return;
+            }
+
+            let message = "";
+            let color = "green";
+
+            if (Math.abs(studentYmax - correctYmax) > 0.1) {
+                message += "La respuesta de la altura máxima es incorrecta. ";
+                color = "red";
+            } else {
+                message += "La respuesta de la altura máxima es correcta. ";
+            }
+
+            if (Math.abs(studentXmax - correctXmax) > 0.1) {
+                message += "La respuesta de la distancia horizontal es incorrecta.";
+                color = "red";
+            } else {
+                message += "La respuesta de la distancia horizontal es correcta.";
+            }
+
+            feedback.innerText = message;
+            feedback.style.color = color;
+        }
+    </script>
+</body>
+</html>
